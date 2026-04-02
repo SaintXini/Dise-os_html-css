@@ -1,0 +1,230 @@
+/* =============================================
+   VARIABLES Y RESET
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-fondo:        #f5f0eb;
+  --color-superficie:   #ffffff;
+  --color-acento:       #b5451b;
+  --color-texto:        #1a1614;
+  --color-texto-suave:  #6b5e57;
+  --color-borde:        #e2d8d0;
+  --sombra-suave:       0 4px 20px rgba(26, 22, 20, 0.08);
+  --sombra-hover:       0 16px 40px rgba(26, 22, 20, 0.18);
+  --radio:              12px;
+  --ancho-tarjeta:      280px;
+  --transicion:         all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* =============================================
+   BASE
+   ============================================= */
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: 'Lato', sans-serif;
+  color: var(--color-texto);
+  min-height: 100vh;
+  /* Sin Flexbox en el body */
+}
+
+/* =============================================
+   CONTENEDOR PRINCIPAL
+   ============================================= */
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 32px 48px;
+}
+
+/* =============================================
+   ENCABEZADO
+   ============================================= */
+.encabezado {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-acento);
+  margin-bottom: 16px;
+}
+
+.titulo-principal {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--color-texto);
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.subtitulo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-texto-suave);
+  font-weight: 400;
+}
+
+/* Línea decorativa debajo del encabezado */
+.encabezado::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 2px;
+  background-color: var(--color-acento);
+  margin: 24px auto 0;
+}
+
+/* =============================================
+   SECCIÓN DE VIAJES — FLEXBOX AQUÍ
+   ============================================= */
+.seccion-viajes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+/* =============================================
+   TARJETAS
+   ============================================= */
+.tarjeta {
+  background-color: var(--color-superficie);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  width: var(--ancho-tarjeta);
+  text-align: center;
+  overflow: hidden;
+  transition: var(--transicion);
+  border: 1px solid var(--color-borde);
+}
+
+/* Efecto hover sobre la tarjeta */
+.tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-hover);
+}
+
+/* =============================================
+   IMAGEN DE LA TARJETA
+   ============================================= */
+.tarjeta-imagen-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.tarjeta-imagen {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.tarjeta:hover .tarjeta-imagen {
+  transform: scale(1.07);
+}
+
+/* Badge de región sobre la imagen */
+.tarjeta-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--color-acento);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 40px;
+}
+
+/* =============================================
+   CUERPO DE LA TARJETA
+   ============================================= */
+.tarjeta-cuerpo {
+  padding: 22px 20px 24px;
+}
+
+.tarjeta-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-texto);
+  margin-bottom: 10px;
+}
+
+.tarjeta-descripcion {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--color-texto-suave);
+  margin-bottom: 18px;
+}
+
+.tarjeta-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-acento);
+  border-bottom: 1.5px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 0.25s ease;
+  cursor: default;
+}
+
+.tarjeta:hover .tarjeta-link {
+  border-color: var(--color-acento);
+}
+
+/* =============================================
+   PIE DE PÁGINA
+   ============================================= */
+.pie {
+  margin-top: 64px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--color-texto-suave);
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--color-borde);
+  padding-top: 24px;
+}
+
+/* =============================================
+   RESPONSIVO
+   ============================================= */
+@media (max-width: 680px) {
+  .contenedor {
+    padding: 40px 20px 36px;
+  }
+
+  .seccion-viajes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta {
+    width: 100%;
+    max-width: 340px;
+  }
+}
