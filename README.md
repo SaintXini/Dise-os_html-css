@@ -18,3 +18,4 @@ El objetivo de esta práctica era crear una sección de una página web que mues
 
 
 ### Web Ong
+El objetivo de esta práctica es crear una página web sencilla para un proyecto solidario utilizando únicamente HTML y CSS, aplicando los conceptos vistos hasta ahora en el curso.
