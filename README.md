@@ -7,6 +7,7 @@ Los diseños realizados son los siguientes:
 + Web ONG
 
 ### Tarjeta de presentación
+<img width="1061" height="707" alt="image" src="https://github.com/user-attachments/assets/65842001-1d04-46c6-98ce-f516dd3bf147" />
 
 ### Tarjeta de Viajes
 
