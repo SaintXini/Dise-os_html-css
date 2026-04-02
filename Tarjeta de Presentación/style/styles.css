@@ -1,0 +1,229 @@
+/* =============================================
+   HOJA DE ESTILOS — TARJETA DE PERFIL
+   Estética: Sofisticada / Editorial oscura
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ---- Variables globales ---- */
+:root {
+  --bg-page: #0d0f14;
+  --bg-card: #16181f;
+  --accent: #c8a96e;
+  --accent-hover: #e8c98e;
+  --text-primary: #f0ece4;
+  --text-secondary: #8a8fa0;
+  --border: rgba(200, 169, 110, 0.18);
+  --shadow: 0 32px 80px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(200, 169, 110, 0.08);
+  --radius: 20px;
+  --radius-img: 50%;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---- Reset básico ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- Página ---- */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Textura sutil de fondo */
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200, 169, 110, 0.06) 0%, transparent 70%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 255, 255, 0.015) 39px,
+      rgba(255, 255, 255, 0.015) 40px
+    );
+}
+
+/* =============================================
+   TARJETA
+   ============================================= */
+.card {
+  width: 340px;
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 48px 36px 40px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+
+  position: relative;
+  overflow: hidden;
+
+  /* Animación de entrada */
+  animation: fadeInUp 0.7s ease both;
+}
+
+/* Línea decorativa superior */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+/* Brillo ambiental suave */
+.card::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 120px;
+  background: radial-gradient(ellipse, rgba(200, 169, 110, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* =============================================
+   IMAGEN DE PERFIL
+   ============================================= */
+.card__image-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+/* Aro decorativo */
+.card__image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), transparent 60%);
+  z-index: 0;
+}
+
+.card__image {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-img);
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1;
+  border: 3px solid var(--bg-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover .card__image {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(200, 169, 110, 0.25);
+}
+
+/* =============================================
+   ETIQUETA / BADGE
+   ============================================= */
+.card__badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(200, 169, 110, 0.1);
+  border: 1px solid rgba(200, 169, 110, 0.25);
+  border-radius: 100px;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+}
+
+/* =============================================
+   NOMBRE
+   ============================================= */
+.card__name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+/* =============================================
+   DIVISOR
+   ============================================= */
+.card__divider {
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  margin: 0 auto 16px;
+  opacity: 0.6;
+}
+
+/* =============================================
+   DESCRIPCIÓN
+   ============================================= */
+.card__description {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 260px;
+}
+
+/* =============================================
+   BOTÓN DE CONTACTO
+   ============================================= */
+.card__btn {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-page);
+  background: var(--accent);
+  padding: 13px 36px;
+  border-radius: 100px;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 20px rgba(200, 169, 110, 0.3);
+}
+
+.card__btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200, 169, 110, 0.45);
+}
+
+.card__btn:active {
+  transform: translateY(0);
+}
+
+/* =============================================
+   ANIMACIÓN DE ENTRADA
+   ============================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
