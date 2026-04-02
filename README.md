@@ -9,13 +9,15 @@ Los diseños realizados son los siguientes:
 ### Tarjeta de presentación
 El objetivo de esta práctica era crear una tarjeta de presentación personal utilizando únicamente HTML y CSS, aplicando los conceptos vistos hasta ahora en el curso.
 
-<img width="50%" height="707" alt="image" src="https://github.com/user-attachments/assets/65842001-1d04-46c6-98ce-f516dd3bf147" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/65842001-1d04-46c6-98ce-f516dd3bf147" />
 
 ### Tarjeta de Viajes
 El objetivo de esta práctica era crear una sección de una página web que muestre tarjetas de destinos de viaje, aplicando correctamente HTML y CSS y utilizando Flexbox para organizar el contenido.
 
-<img width="40%" height="910" alt="image" src="https://github.com/user-attachments/assets/5291b351-d410-4fde-bcbd-875bdbb88e17" />
+<img width="40%" alt="image" src="https://github.com/user-attachments/assets/5291b351-d410-4fde-bcbd-875bdbb88e17" />
 
 
 ### Web Ong
 El objetivo de esta práctica es crear una página web sencilla para un proyecto solidario utilizando únicamente HTML y CSS, aplicando los conceptos vistos hasta ahora en el curso.
+
+<img width="40%" alt="image" src="https://github.com/user-attachments/assets/030dff67-33b1-4f5b-92a9-fac894df671e" />
